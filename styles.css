@@ -5,7 +5,9 @@
     font-family: Arial, sans-serif;
 }
 
-
+a{
+    text-decoration:none;
+}
 .navbar {
     position: absolute;
     top: 0;
@@ -359,4 +361,9 @@
     line-height:17.56px;
     color: rgba(16, 24, 40, 0.5);
 
+}
+.icons {
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap:12.54px;
 }
