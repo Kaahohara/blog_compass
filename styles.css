@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -8,6 +10,7 @@
 a{
     text-decoration:none;
 }
+/* menu */
 .navbar {
     position: absolute;
     top: 0;
@@ -37,16 +40,6 @@ a{
     gap: 20px;
 }
 
-.menu li a, .dropbtn {
-    color: white;
-    padding: 10px;
-    transition: 0.3s;
-}
-
-.menu li a:hover, .dropbtn:hover {
-    background: rgba(255, 255, 255, 0.2);
-    border-radius: 5px;
-}
 
 .dropdown {
     position: relative;
@@ -61,10 +54,6 @@ a{
     left: 0;
     border-radius: 5px;
     padding: 5px 0;
-}
-
-.dropdown:hover .dropdown-content {
-    display: block;
 }
 
 .hamburger {
@@ -108,7 +97,7 @@ a{
         display: block;
     }
 }
-/* Banner */
+/*Section Banner */
 #banner {
     position: relative;
     width: 100%;
@@ -164,7 +153,6 @@ a{
     margin-top: 20px;
 }
 
-
 .header {
     display: flex;
     flex-direction: column;
@@ -175,18 +163,137 @@ a{
     padding-bottom:10px;
     margin-bottom:16px;
 }
-.section-header .section-title{
+.section-title{
     display: inline-flex;
     align-items: center;
     gap:15px;
 }
-.section-header .section-title h2{
+.section-title h2{
     color:#101828;
     font-family: 'Formative Trial', sans-serif;
     font-weight: 500;
     font-size: 20px;
     line-height: 100%;
     letter-spacing: 0%; 
+}
+.section-header.white{
+    border-bottom: 0.2px solid white;
+}
+.section-header.white h2{
+    color: #ffffff;
+}
+.section-title.white h2{
+    color: #ffffff;
+}
+.newsletter{
+    padding: 40px 0;
+    display: flex;
+    flex-direction: column;
+    gap:32px;
+   
+}
+.border-top{  
+    border-top: 0.5px solid #CECECE;
+}
+.newsletter form{
+    display: flex;
+    flex-direction: column;
+    gap:15px;
+}
+.newsletter p{
+    color:#CECECE;
+    font-weight: 400;
+    font-size: 16px;
+    line-height:24px;
+    margin-bottom:16px;
+}
+#footer h2{
+    color:#fff;
+    font-family: 'Formative Trial', sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 30px;
+    letter-spacing: 0%; 
+}
+.container-form input {
+    width: 100%;
+    padding: 7.86px 10.48px;
+    font-size: 10.48px;
+    font-weight:400;   
+    font-family: 'Formative Trial', sans-serif;
+    border-radius: 7.07px;
+    color:#667085;
+    border:0.88px solid #D0D5DD;
+    transition: border-color 0.3s ease;
+}
+.container-form textarea {
+    width: 100%;
+    padding: 6.55px 9.17px;
+    font-size: 10.48px;
+    font-weight:400;   
+    height:82.95687103271484px;
+    font-family: 'Formative Trial', sans-serif;
+    border-radius: 7.07px;
+    color:#667085;
+    border:0.88px solid #D0D5DD;
+    transition: border-color 0.3s ease;
+}
+.container-form label{
+    font-size: 9.17px;
+    font-weight:500;   
+    font-family: 'Formative Trial', sans-serif;
+    border-radius: 7.07px;
+    color:#344054;
+}
+.grid{
+    display:grid;
+    gap:20.96px;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.checkbox-container {
+  display: flex;
+  align-items: center;
+  gap: 7.86px; 
+}
+
+.checkbox-container input {
+    width: 16px;  
+    height: 16px;
+  }
+  
+.checkbox-container p {
+   
+    color: #667085; 
+  }
+
+.checkbox-container a {
+  text-decoration: underline;
+  color: #667085; 
+}
+
+.newsletter input, textarea {
+    width: 100%;
+    padding: 8.83px 12.36px;
+    font-size: 14.13px;
+    font-weight:400;   
+    font-family: 'Inter', sans-serif;
+    background-color:#fff;
+    border-radius: 7.07px;
+    color:#667085;
+    border:0.88px solid #D0D5DD;
+    transition: border-color 0.3s ease;
+}
+.newsletter button{
+    background-color:white;
+    color:#344054;
+    border-radius:7.07px;
+    padding:8.83px 124.9px;
+    font-weight:600;
+    font-size:14.13px;
+    font-family: 'Inter', sans-serif;
+    border: 0.88px solid #D0D5DD;
+    width: 100%;
 }
 /* section featuredproducts */
 #featuredproducts{
@@ -224,11 +331,7 @@ a{
     background-color:#101828;
    color:white;
 }
-
-#footer{
-    background-color:#101828;
-}
-/* Shop */
+/*Section Shop */
 #shop{
     padding: 40px 16px;
 }
@@ -275,7 +378,7 @@ a{
 .item.adoption {
     grid-column: span 2;
 }
-/* About Us */
+/* Section About Us */
 #about{
     padding: 40px 16px;
 }
@@ -366,4 +469,114 @@ a{
     display:grid;
     grid-template-columns: repeat(3, 1fr);
     gap:12.54px;
+}
+
+
+/* Section footer */
+#footer{
+    background-color:#101828;
+    padding: 40px 16px;
+}
+.contacts{
+    display:grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap:31.45px;
+}
+.contacts .item{
+    align-items:left;
+    color:white;
+}
+.contacts .item p{
+    color:#CECECE;
+    font-family: 'Formative Trial', sans-serif;
+    font-weight:400;
+    font-size: 10.48px;
+    line-height:15.72px;
+    margin-bottom:10.48px;
+}
+.contacts .item h3{
+    color:#fff;
+    font-family: 'Formative Trial', sans-serif;
+    font-weight:600;
+    font-size: 13.1px;
+    line-height:19.65px;
+    margin-bottom:13.1px;
+}
+.contacts .item address{
+    color:#fff;
+    font-family: 'Formative Trial', sans-serif;
+    font-weight:600;
+    font-size: 10.48px;
+    line-height:15.72px;
+    margin-bottom:10.48px;
+}
+.category{
+    display:grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap:31.45px;
+    padding-bottom:40px;
+    text-decoration:none;
+}
+.category .item{
+    align-items:left;
+    color:white;
+}
+.category .item p{
+    color:#CECECE;
+    font-family: 'inter', sans-serif;
+    font-weight:600;
+    font-size: 16px;
+    line-height:24px;
+    margin-bottom:16px;
+}
+.category .item h3{
+    color:#fff;
+    font-family: 'inter', sans-serif;
+    font-weight:700;
+    font-size: 14px;
+    line-height:20px;
+    margin-bottom:14px;
+}
+.allrights{
+    padding:14px 13px;
+    text-align:center;
+    display:grid;
+    gap:20px;
+}
+
+.allrights p{
+    font-weight:400;
+    font-size:16px;
+    line-height:24px;
+    color:#CECECE;
+}
+.allrights .icons {
+    display:grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap:24px;
+}
+.contact-info{
+    display:grid;
+    gap:20px;
+    padding-bottom:40px;
+}
+.container-form {
+    background-color: #fff;
+    padding: 26.2px 20.96px;
+    gap:20.93px;
+    display:grid;
+    border-radius:10.48px;
+}
+.container-form button{
+    border-radius:5.24px;
+    background: linear-gradient(to right, #101828, #233250);
+    border:0.66px black;
+    padding: 13.1px 16.38px;
+    font-family: 'Formative Trial', sans-serif;
+    font-size:10.48px;
+    line-height:15.72px;
+    color:white;
+}
+
+@media (min-width: 1024px) { 
 }
