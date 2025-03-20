@@ -9,7 +9,10 @@
     document.addEventListener("DOMContentLoaded", () => {
         const tabs = document.querySelectorAll(".tab");
         const productSections = document.querySelectorAll(".products");
-    
+        let allProducts = [];
+        productSections.forEach(section => {
+            allProducts = allProducts.concat(Array.from(section.children));
+        });
         tabs.forEach(tab => {
             tab.addEventListener("click", () => {
                 tabs.forEach(t => t.classList.remove("active"));
@@ -33,21 +36,40 @@
             });
         });
       //Embaralha os produtos
-        function randomProducts(container) {
-            const products = Array.from(container.children);
-            for (let i = products.length - 1; i > 0; i--) {
-                const j = Math.floor(Math.random() * (i + 1));
-                container.appendChild(products[j]);
-            }
+      function randomProducts(container) {
+        const shuffledProducts = [...allProducts]; 
+        for (let i = shuffledProducts.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [shuffledProducts[i], shuffledProducts[j]] = [shuffledProducts[j], shuffledProducts[i]];
         }
-    });
-    
+
+        container.innerHTML = "";
+        shuffledProducts.forEach(product => container.appendChild(product));
+    }
+});
+document.addEventListener("DOMContentLoaded", () => {
+  const products = document.querySelectorAll(".products.random .product-image");
+  const viewMore = document.getElementById("view-more");
+
+  function showAllProducts() {
+      products.forEach(product => {
+          product.style.display = "block";
+          viewMore.style.display="none";
+      });
+  }
+  viewMore.addEventListener("click", () => {
+      showAllProducts(); 
+  });
+});
+
+
     //Validacão do formulário
     document.getElementById("contact-form").addEventListener("submit", function (event) {
-        const errorElement = document.getElementById("error-message");
-        const errorCard = document.getElementById("error-card");
-        errorElement.textContent = ""; 
-        errorElement.style.display = "none"; 
+        const errorElement = document.getElementById("error-message-contact");
+        const errorCard = document.getElementById("error-card-contact");
+        errorElement.textContent = "";    
+        errorElement.classList.remove("show");
+        
         errorCard.style.display="none";
 
         const firstname = document.getElementById("firstname");
@@ -57,8 +79,9 @@
         const termos = document.getElementById("termos");
   
         function error(message){
-          errorElement.textContent=message;
-          errorElement.style.display = "block";
+          errorElement.textContent=message;   
+          errorElement.classList.add("show");
+        
           errorCard.style.display = "block";
           event.preventDefault();
           return;
@@ -84,16 +107,18 @@
 
     //   Validação do email newsletter 
     document.getElementById("newsletter-form").addEventListener("submit", function (event) {
-
-        const errorElement = document.getElementById("error-newsletter");
+        const errorCard = document.getElementById("error-card-newsletter");
+        const errorElement = document.getElementById("error-message-newsletter");
+        errorCard.style.display="none";
         errorElement.textContent = ""; 
-        errorElement.style.display = "none"; 
+        errorElement.classList.remove("show");
         
         const email = document.getElementById("email-newsletter");
   
         function error(message){
           errorElement.textContent=message;
-          errorElement.style.display = "block";
+          errorElement.classList.add("show");
+          errorCard.style.display = "block";
           event.preventDefault();
           return;
         }
@@ -104,7 +129,7 @@
       });
 
     // dropdown do menu
-    document.addEventListener("DOMContentLoaded", function () {
+  document.addEventListener("DOMContentLoaded", function () {
   const menuButton = document.getElementById("menu");
   const mobileMenu = document.getElementById("mobile-menu");
 
