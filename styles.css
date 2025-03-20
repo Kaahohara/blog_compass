@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 * {
     margin: 0;
     padding: 0;
@@ -10,6 +9,9 @@
 a{
     text-decoration:none;
 }
+.section-padding{
+    padding: 40px 16px;
+}
 /* menu */
 .navbar {
     position: absolute;
@@ -19,8 +21,11 @@ a{
     padding: 15px 20px;
     z-index: 100;
 }
+.navbar .button{
+    display:none;
+}
 
-.container {
+.navbar-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -32,6 +37,9 @@ a{
     font-size: 24px;
     font-weight: bold;
     color: white;
+    display:flex;
+    align-items:center;
+    gap:11px;
     text-decoration:none;
 }
 
@@ -40,20 +48,16 @@ a{
     gap: 20px;
 }
 
-
-.dropdown {
-    position: relative;
-}
-
 .dropdown-content {
     display: none;
-    position: absolute;
-    background: rgba(0, 0, 0, 0.7);
-    min-width: 120px;
-    top: 100%;
-    left: 0;
+    list-style:none;
+    background: linear-gradient(86.93deg, #101828 0.18%, #233250 99.39%);
+    padding:10px;
+    min-width: 150px;
     border-radius: 5px;
-    padding: 5px 0;
+}
+.dropdown.open .dropdown-content {
+    display: block;
 }
 
 .hamburger {
@@ -88,17 +92,30 @@ a{
     display: block;
 }
 
-@media (max-width: 768px) {
-    .menu {
-        display: none;
+    @media (max-width: 768px) {
+        .menu {
+            display: none;
+        }
+        
+        .hamburger {
+            display: block;
+        }
+        .dropdown{
+            color: white;
+            padding: 10px;
+            text-align: center;
+            display: block;
+        }
+        .dropbtn{
+            color: white;
+            font-size:16px;
+            background:none;
+            border:none;
+        }
+
     }
-    
-    .hamburger {
-        display: block;
-    }
-}
 /*Section Banner */
-#banner {
+.banner {
     position: relative;
     width: 100%;
     height: 100vh; 
@@ -114,30 +131,28 @@ a{
     color: white;
 }
 
-.bannercontent {
+.banner-content {
     max-width: 600px; 
     gap:50px;   
 }
 
-.bannercontent h1 {
-    font-family: 'Formative Trial', sans-serif;
+.banner-content h1 {
+    font-family: 'Montserrat', sans-serif;
     font-weight: 600;
     font-size: 30px;
     line-height: 130%;
-    letter-spacing: 2%;
     margin-bottom: 16px; 
 }
 
-.bannercontent p {
-    font-family: 'Formative Trial', sans-serif;
+.banner-content p {
+    font-family: 'Montserrat', sans-serif;
     font-weight: 600;
-    font-size: 14px;
-    line-height: 120%;
-    letter-spacing: 0%;
+    font-size: 16px;
+    line-height: 24px;
     margin-bottom: 16px; 
 }
 
-.bannercontent .button {
+.banner-content .button {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -170,11 +185,10 @@ a{
 }
 .section-title h2{
     color:#101828;
-    font-family: 'Formative Trial', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-weight: 500;
     font-size: 20px;
     line-height: 100%;
-    letter-spacing: 0%; 
 }
 .section-header.white{
     border-bottom: 0.2px solid white;
@@ -185,12 +199,24 @@ a{
 .section-title.white h2{
     color: #ffffff;
 }
-.newsletter{
+.newsletter, .container-category{
     padding: 40px 0;
     display: flex;
     flex-direction: column;
     gap:32px;
    
+}
+.container-category p{
+    color:#CECECE;
+    font-weight: 400;
+    font-size: 16px;
+    line-height:24px;
+    margin-bottom:16px;
+}
+.newsletter-text{
+    display: flex;
+    flex-direction: column;
+    gap:30px;
 }
 .border-top{  
     border-top: 0.5px solid #CECECE;
@@ -207,20 +233,19 @@ a{
     line-height:24px;
     margin-bottom:16px;
 }
-#footer h2{
+.footer h2{
     color:#fff;
-    font-family: 'Formative Trial', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-weight: 500;
     font-size: 20px;
     line-height: 30px;
-    letter-spacing: 0%; 
 }
 .container-form input {
     width: 100%;
     padding: 7.86px 10.48px;
     font-size: 10.48px;
     font-weight:400;   
-    font-family: 'Formative Trial', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     border-radius: 7.07px;
     color:#667085;
     border:0.88px solid #D0D5DD;
@@ -232,7 +257,7 @@ a{
     font-size: 10.48px;
     font-weight:400;   
     height:82.95687103271484px;
-    font-family: 'Formative Trial', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     border-radius: 7.07px;
     color:#667085;
     border:0.88px solid #D0D5DD;
@@ -241,7 +266,7 @@ a{
 .container-form label{
     font-size: 9.17px;
     font-weight:500;   
-    font-family: 'Formative Trial', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     border-radius: 7.07px;
     color:#344054;
 }
@@ -274,7 +299,7 @@ a{
 
 .newsletter input, textarea {
     width: 100%;
-    padding: 8.83px 12.36px;
+    padding: 10px 14px;
     font-size: 14.13px;
     font-weight:400;   
     font-family: 'Inter', sans-serif;
@@ -288,7 +313,7 @@ a{
     background-color:white;
     color:#344054;
     border-radius:7.07px;
-    padding:8.83px 124.9px;
+    padding:10px 18px;
     font-weight:600;
     font-size:14.13px;
     font-family: 'Inter', sans-serif;
@@ -296,28 +321,126 @@ a{
     width: 100%;
 }
 /* section featuredproducts */
-#featuredproducts{
-    padding: 40px 16px;
-    display: grid;
-    gap:20px;
-}
-#featuredproducts img{
+
+.featuredproducts img{
     width:100%;
     height:auto;
     border-radius:10px;
 }
-#featuredproducts h3{
+.products-container{
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+}
+.featuredproducts h3{
     padding:10px;
-    font-family: 'Formative Trial', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-weight: 500;
     font-size: 15px;
     line-height: 100%;
-    letter-spacing: 0%; 
 }
 .products{
-    display:grid;
-    gap:17px;
+    display: none;
+
+   
 }
+.products.random {
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+
+}
+
+.product-image {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.product-image img {
+    width: 100%;
+    display: block;
+    border-radius: 10px;
+}
+
+.product-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; 
+    background: rgba(0, 0, 0, 0.6);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+  
+    border-radius: 10px;
+}
+.description{
+    font-size:18px;
+    font-weight:400;
+    font-family:'Montserrat', sans-serif;
+}
+
+.quantity-button{
+    padding:15px 19px;
+    border-radius:8px;
+    display:flex;
+    gap:15px;
+    background: linear-gradient(86.93deg, #101828 0.18%, #233250 99.39%);
+
+}
+.quantity-button button{
+    background:none;
+    border:none;
+    color:white;
+   
+}
+.quantity-container{
+    display:flex;
+    gap:13px;
+    align-items:center;
+    justify-content: center;
+}
+.card-btn {
+    background: linear-gradient(86.93deg, #101828 0.18%, #233250 99.39%);
+    color: white;
+    border: none;
+    padding: 15px 25px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+.product-image:hover .product-overlay {
+    opacity: 1;
+}
+
+.product-text {
+    color: white;
+    padding: 35px;
+    height:100%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: space-between;
+}
+.align-right{
+    display:none;
+}
+.blog hr{
+    display:none;
+}
+.product-text h3 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.product-text p {
+    font-size: 14px;
+    color: #ccc;
+}
+
 .tabs{
     display:flex;
 }
@@ -328,34 +451,42 @@ a{
     padding: 10px 16px;
 }
 .active{
-    background-color:#101828;
+    background: linear-gradient(86.93deg, #101828 0.18%, #233250 99.39%);
    color:white;
+   border:1px linear-gradient(86.93deg, #101828 0.18%, #233250 99.39%);
 }
-/*Section Shop */
-#shop{
-    padding: 40px 16px;
-}
-#shop .container {
+/*Section services */
+
+.services-container {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr); 
+    grid-template-rows: repeat(2, 1fr); 
     gap: 10px;
-    max-width: 400px;
+    margin: 20px auto;
+    max-width:100%;
 }
 
-.item {
+.services-item.adoption {
+    grid-column: span 2;
+    grid-row: 3; 
+}
+
+.services-item {
     position: relative;
     overflow: hidden;
-    border-radius: 5px;
+    border-radius: 10px;
+    max-height: 364px; 
 }
 
-.item img {
+.services-item img {
     width: 100%;
-    height: auto;
+    max-height: 100%;
+    height: 100%;
     object-fit: cover;
-    border-radius: 5px;
+    border-radius: 10px;
 }
 
-.item .overlay {
+.services-item .overlay {
     position: absolute;
     top: 0;
     left: 0;
@@ -368,50 +499,38 @@ a{
     border-radius: 10px;
 }
 
-.item .overlay p {
+.services-item .overlay p {
     color: white;
     font-size: 18px;
     font-weight: bold;
     text-align: center;
 }
-
-.item.adoption {
-    grid-column: span 2;
-}
 /* Section About Us */
-#about{
-    padding: 40px 16px;
-}
 
-#about p{
+.about p{
     color:#667085;
-    font-family: 'Formative Trial', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-weight:400;
     font-size: 15px;
     line-height:160%;
-    letter-spacing: -0%; 
     margin-bottom:16px;
 }
 /* Section Blog */
-#blog{
-    padding: 40px 16px;
-}
-#blog h3{
-    font-family: 'Formative Trial', sans-serif;
+
+.blog h3{
+    font-family: 'Montserrat', sans-serif;
     font-weight:600;
     font-size: 20px;
     line-height:44px;
-    letter-spacing: -2%; 
 }
-#blog p{
+.blog p{
     color:#667085;
-    font-family: 'Formative Trial', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-weight:400;
     font-size: 15px;
     line-height:160%;
-    letter-spacing: -0%; 
 }
-#blog .button {
+.blog .button {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -427,12 +546,10 @@ a{
     color: white;
     font-size: 15px;
     line-height:100%;
-    weight:400;
+    font-weight:400;
 }
 /* Section team */
-#team {
-    padding: 40px 16px;
-}
+
 .team-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -451,14 +568,14 @@ a{
     text-align:center;
 }
 .team-card h2{
-    font-family: 'Formative Trial', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-weight:600;
     font-size: 12.54px;
     line-height:18.81px;
 
 }
 .team-card p{
-    font-family: 'Formative Trial', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-weight:400;
     font-size: 11.29px;
     line-height:17.56px;
@@ -473,7 +590,7 @@ a{
 
 
 /* Section footer */
-#footer{
+.footer{
     background-color:#101828;
     padding: 40px 16px;
 }
@@ -488,7 +605,7 @@ a{
 }
 .contacts .item p{
     color:#CECECE;
-    font-family: 'Formative Trial', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-weight:400;
     font-size: 10.48px;
     line-height:15.72px;
@@ -496,7 +613,7 @@ a{
 }
 .contacts .item h3{
     color:#fff;
-    font-family: 'Formative Trial', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-weight:600;
     font-size: 13.1px;
     line-height:19.65px;
@@ -504,12 +621,29 @@ a{
 }
 .contacts .item address{
     color:#fff;
-    font-family: 'Formative Trial', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-weight:600;
     font-size: 10.48px;
     line-height:15.72px;
     margin-bottom:10.48px;
 }
+.error-card {
+    display:none;
+    background-color: #fdecea;
+    border-left: 5px solid #d32f2f;
+    color: #000;
+    padding: 16px;
+    border-radius: 8px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+}
+.error-message{
+    display:none;
+    margin: 0;
+    font-size: 14px;
+    font-weight: bold;
+    color:red;
+  }
 .category{
     display:grid;
     grid-template-columns: repeat(2, 1fr);
@@ -560,6 +694,9 @@ a{
     gap:20px;
     padding-bottom:40px;
 }
+.search-container {
+display:none;
+}
 .container-form {
     background-color: #fff;
     padding: 26.2px 20.96px;
@@ -572,11 +709,301 @@ a{
     background: linear-gradient(to right, #101828, #233250);
     border:0.66px black;
     padding: 13.1px 16.38px;
-    font-family: 'Formative Trial', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-size:10.48px;
     line-height:15.72px;
     color:white;
 }
+.image{
+    display:none;    
+}
+
+
+
 
 @media (min-width: 1024px) { 
+ /* Menu */
+    .menu li{
+        color:white;
+        list-style: none;
+    }
+    .menu a{
+        color:white;
+        text-decoration:none;
+    }
+    .navbar .button{
+        color:black;
+        display:block;
+        border-radius:50px;
+        padding:10px 18px;
+        border:none;
+        font-weight:600;
+        font-family:"Montserrat", sans-serif;
+        font-size:14px;
+        line-height:24px;
+    }
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background: linear-gradient(86.93deg, #101828 0.18%, #233250 99.39%);
+        padding:10px;
+        min-width: 150px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        border-radius: 5px;
+    }
+    .navbar .dropbtn{
+        display:block;
+        background:none;
+        border:none;
+        color:white;
+        font-family: "formative Trial", sans-serif;
+        font-weight:600;
+        font-size:16px;
+        line-height:24px;
+    }
+    .menu-left{
+        display:flex;
+        align-items: center;
+        gap:20px;
+        color:white;
+        font-family: "formative Trial", sans-serif;
+        font-weight:600;
+        font-size:16px;
+        line-height:24px;
+    }
+  
+    .left .logo{
+        font-size:20px;
+    }
+    /* Banner */
+    .banner-content{
+        margin-left:80px;
+    }
+    /* Products */
+    .products.random {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 15px;
+        width: 100%;
+    }
+    .product-header{
+        display:flex;
+        width:100%;
+        justify-content: space-between;
+    }
+    
+    .products-container{
+        border: 0.2px solid #000;
+        display: grid;
+        gap:20px;
+        padding:20px;
+        margin:40px;
+    }
+    .featuredproducts h3{
+        font-family: 'Montserrat', sans-serif;
+        font-weight:600;
+        font-size:25px;
+        line-height:100%;
+    }
+    .search-container {
+        position: relative;
+        display: flex;
+        align-items: center;
+    }
+
+    .search-input {
+        width: 250px;
+        padding: 10px 15px 10px 40px;
+        border: none;
+        border-radius: 50px;
+        background-color: #f5f5f5;
+        color: #757575;
+        font-size: 16px;
+        outline: none;
+    }
+
+    .search-input::placeholder {
+        color: #a0a0a0;
+    }
+
+    .search-icon {
+        position: absolute;
+        left: 15px;
+        width: 18px;
+        height: 18px;
+        fill: #a0a0a0;
+    }
+    .products{
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .tabs{
+        justify-content: center;
+    }
+    /* Services */
+    .services-container {
+        display: grid;
+        margin:40px;
+        padding:20px;
+        grid-template-columns: repeat(3, 1fr); 
+        grid-template-rows: repeat(2, 1fr); 
+        gap: 10px;
+        max-width:100%;
+        border: 0.2px solid #000; 
+    }
+
+    .services-item.adoption {
+        grid-row: span 2;
+        grid-column: 3; 
+    }
+    .section-title h2{
+        color:#101828;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 500;
+        font-size: 25px;
+        line-height: 100%;
+    }
+
+    .services-item {
+        position: relative;
+        overflow: hidden;
+        max-height: 100%; 
+        border-radius: 10px;
+    }
+    
+    .services-item img {
+        width: 100%;
+        max-height: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 10px;
+    }
+    .team-container{
+        display: flex;
+        justify-content: space-around;
+    }
+    .about-container{
+        display:flex;
+        gap:64px;
+        margin:40px;
+        padding:20px;
+        align-items: flex-start;
+        justify-content: space-between;
+        border: 0.2px solid #000; 
+    }
+   
+    .section-padding {
+        padding: 70px 80px;
+    }
+   
+    .image{
+        display:block;
+        max-width: 50%;
+        flex: 1;
+    }
+
+    .text{
+        flex: 1;
+        max-width: 50%;
+    }
+
+    /* Blog */
+    .blog-container{
+        margin:40px;
+        padding:20px;
+        display:flex;
+        gap:64px;
+        align-items: stretch;
+        grid-template-columns: repeat(2, 1fr);
+    }
+ 
+    .blog .text{
+        display:flex;
+        flex-direction: column;
+        gap:30px;
+    }
+    .blog .text p{
+        color:#667085;
+    }
+    .blog hr{
+        display:block;
+        color:#EAECF0;
+    }
+   /* Team */
+    .team-card{ 
+        gap:6px;
+        justify-items:left;
+        text-align:left;
+    }
+  
+    .container-flex{
+        display:flex;
+        gap:64px;
+    }
+   /* Footer */
+   .newsletter form{
+    display:flex;
+    flex-direction: row;
+}
+.newsletter, .category-header{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.category{
+    display:flex;
+    gap:82px;
+}
+
+
+.contact-container {
+    display:flex;
+    padding:0px 32px;
+    gap:64px;
+    justify-content: center;
+    flex-direction: row-reverse;
+}
+.allrights{
+    display:flex;
+    justify-content: space-between;
+}    
+
+.container-newsletter, .container-category{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.container-category p{
+    color:#CECECE;
+    font-weight: 400;
+    font-size: 16px;
+    line-height:24px;
+    margin-bottom:16px;
+}
+.text h2{
+    font-weight:600;
+    font-size:36px;
+}
+.text h3{
+    font-weight:600;
+    font-size:24px;
+}
+.image img{
+    width:100%;
+}
+.align-right{
+    color:black;
+    display: flex;
+    justify-content: flex-end;
+   }
+   .align-right a{
+    text-decoration:none;
+   }
+   .newsletter-text{
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+   }
+    
 }

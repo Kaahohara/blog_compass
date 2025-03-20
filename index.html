@@ -5,57 +5,96 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pet Shop</title>
     <link rel="stylesheet" href="styles.css" />
-    <script src="script.js" defer></script>
+    <script src="index.js" defer></script>
   </head>
   <body>
     <header>
-        <nav class="navbar">
-            <div class="container">
-                <a href="#" class="logo">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
-                    <path d="M7.78113 5.46001C8.44112 5.46001 9.62512 5.66401 9.62512 7.28901C9.62512 8.91401 8.45312 9.53901 7.78113 9.53901C7.10913 9.53901 6.07812 8.90101 6.07812 7.28901C6.07812 5.67601 7.21112 5.46001 7.78113 5.46001ZM4.15613 7.50001C4.81613 7.50001 6.00012 7.70301 6.00012 9.32801C6.00012 10.953 4.82812 11.578 4.15613 11.578C3.48413 11.578 2.45312 10.941 2.45312 9.32801C2.45312 7.71601 3.58613 7.50001 4.15613 7.50001ZM14.0001 7.28901C14.0001 5.66401 12.8161 5.46101 12.1561 5.46101C11.5861 5.46101 10.4531 5.67601 10.4531 7.28901C10.4531 8.90101 11.4841 9.53901 12.1561 9.53901C12.8281 9.53901 14.0001 8.91401 14.0001 7.28901ZM15.7031 7.50001C16.3631 7.50001 17.5471 7.70301 17.5471 9.32801C17.5471 10.953 16.3751 11.578 15.7031 11.578C15.0311 11.578 14.0001 10.941 14.0001 9.32801C14.0001 7.71601 15.1331 7.50001 15.7031 7.50001ZM14.9841 15.469C14.9841 12.547 13.0941 10.016 10.0001 10.016C6.90613 10.016 5.04712 12.484 5.04712 15.469C5.04712 17.953 8.00812 17.953 9.99312 17.953H10.0001C12.2031 17.953 14.9841 17.875 14.9841 15.469ZM16.1561 19.547C16.8161 19.547 18.0001 19.75 18.0001 21.375C18.0001 23 16.8281 23.625 16.1561 23.625C15.4841 23.625 14.4531 22.987 14.4531 21.375C14.4531 19.762 15.5861 19.547 16.1561 19.547ZM21.6251 19.336C21.6251 17.711 20.4411 17.508 19.7811 17.508C19.2111 17.508 18.0781 17.723 18.0781 19.336C18.0781 20.948 19.1091 21.586 19.7811 21.586C20.4531 21.586 21.6251 20.961 21.6251 19.336ZM24.1561 17.508C24.8161 17.508 26.0001 17.711 26.0001 19.336C26.0001 20.961 24.8281 21.586 24.1561 21.586C23.4841 21.586 22.4531 20.948 22.4531 19.336C22.4531 17.723 23.5861 17.508 24.1561 17.508ZM29.5471 21.375C29.5471 19.75 28.3631 19.547 27.7031 19.547C27.1331 19.547 26.0001 19.762 26.0001 21.375C26.0001 22.987 27.0311 23.625 27.7031 23.625C28.3751 23.625 29.5471 23 29.5471 21.375ZM22.0001 22.063C25.0941 22.063 26.9841 24.593 26.9841 27.516C26.9841 29.922 24.2041 30 22.0001 30H21.9921C20.0081 30 17.0471 30 17.0471 27.516C17.0471 24.531 18.9071 22.063 22.0001 22.063Z" fill="white"/>
-                  </svg>
-                   Paws n' Play</a>
-                
-                <ul class="menu">
-                    <li class="dropdown">
-                        <button class="dropbtn">Shop</button>
-                        <ul class="dropdown-content">
-                            <li><a href="#">Toys</a></li>
-                            <li><a href="#">Food</a></li>
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <button class="dropbtn">Services</button>
-                        <ul class="dropdown-content">
-                            <li><a href="#">Grooming</a></li>
-                            <li><a href="#">Training</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Blog</a></li>
-                    <li><a href="#">Contact</a></li>
-                </ul>
-    
-                <button id="menu" class="hamburger">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="16" viewBox="0 0 20 16" fill="none">
-                    <path d="M10 14.25H18.75M1.25 8H18.75M1.25 1.75H18.75" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <nav class="navbar">
+          <div class="navbar-container">
+              <div class="menu-left">
+                  <a href="#" class="logo">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+                      <path d="M7.78113 5.46001C8.44112 5.46001 9.62512 5.66401 9.62512 7.28901C9.62512 8.91401 8.45312 9.53901 7.78113 9.53901C7.10913 9.53901 6.07812 8.90101 6.07812 7.28901C6.07812 5.67601 7.21112 5.46001 7.78113 5.46001ZM4.15613 7.50001C4.81613 7.50001 6.00012 7.70301 6.00012 9.32801C6.00012 10.953 4.82812 11.578 4.15613 11.578C3.48413 11.578 2.45312 10.941 2.45312 9.32801C2.45312 7.71601 3.58613 7.50001 4.15613 7.50001ZM14.0001 7.28901C14.0001 5.66401 12.8161 5.46101 12.1561 5.46101C11.5861 5.46101 10.4531 5.67601 10.4531 7.28901C10.4531 8.90101 11.4841 9.53901 12.1561 9.53901C12.8281 9.53901 14.0001 8.91401 14.0001 7.28901ZM15.7031 7.50001C16.3631 7.50001 17.5471 7.70301 17.5471 9.32801C17.5471 10.953 16.3751 11.578 15.7031 11.578C15.0311 11.578 14.0001 10.941 14.0001 9.32801C14.0001 7.71601 15.1331 7.50001 15.7031 7.50001ZM14.9841 15.469C14.9841 12.547 13.0941 10.016 10.0001 10.016C6.90613 10.016 5.04712 12.484 5.04712 15.469C5.04712 17.953 8.00812 17.953 9.99312 17.953H10.0001C12.2031 17.953 14.9841 17.875 14.9841 15.469ZM16.1561 19.547C16.8161 19.547 18.0001 19.75 18.0001 21.375C18.0001 23 16.8281 23.625 16.1561 23.625C15.4841 23.625 14.4531 22.987 14.4531 21.375C14.4531 19.762 15.5861 19.547 16.1561 19.547ZM21.6251 19.336C21.6251 17.711 20.4411 17.508 19.7811 17.508C19.2111 17.508 18.0781 17.723 18.0781 19.336C18.0781 20.948 19.1091 21.586 19.7811 21.586C20.4531 21.586 21.6251 20.961 21.6251 19.336ZM24.1561 17.508C24.8161 17.508 26.0001 17.711 26.0001 19.336C26.0001 20.961 24.8281 21.586 24.1561 21.586C23.4841 21.586 22.4531 20.948 22.4531 19.336C22.4531 17.723 23.5861 17.508 24.1561 17.508ZM29.5471 21.375C29.5471 19.75 28.3631 19.547 27.7031 19.547C27.1331 19.547 26.0001 19.762 26.0001 21.375C26.0001 22.987 27.0311 23.625 27.7031 23.625C28.3751 23.625 29.5471 23 29.5471 21.375ZM22.0001 22.063C25.0941 22.063 26.9841 24.593 26.9841 27.516C26.9841 29.922 24.2041 30 22.0001 30H21.9921C20.0081 30 17.0471 30 17.0471 27.516C17.0471 24.531 18.9071 22.063 22.0001 22.063Z" fill="white"/>
                     </svg>
-                </button>
-            </div>
-    
-            <ul id="mobile-menu" class="mobile-menu">
-                <li><a href="#">Shop</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">About Us</a></li>
-                <li><a href="#">Blog</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-        </nav>
-      </header>
-    
-<section id="banner">
-  <div class="bannercontent">
+                      <span>Paws n' Play</span>
+                  </a>
+                  
+                  <ul class="menu">
+                      <li class="dropdown">
+                          <button class="dropbtn">Shop 
+                            <svg  width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M5 7.5L10 12.5L15 7.5" stroke="white" stroke-opacity="0.8" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"/>
+                              </svg>
+                              
+                          </button>
+                          <ul class="dropdown-content">
+                              <li><a href="#">Toys</a></li>
+                              <li><a href="#">Food</a></li>
+                          </ul>
+                      </li>
+                      <li class="dropdown">
+                          <button class="dropbtn">Services 
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M5 7.5L10 12.5L15 7.5" stroke="white" stroke-opacity="0.8" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"/>
+                              </svg>
+                              
+                          </button>
+                          <ul class="dropdown-content">
+                              <li><a href="#">Grooming</a></li>
+                              <li><a href="#">Training</a></li>
+                          </ul>
+                      </li>
+                      <li><a href="#">About Us</a></li>
+                      <li><a href="#">Blog</a></li>
+                      <li><a href="#">Contact</a></li>
+                  </ul>
+              </div>  
+              
+              <button class="button">
+                  Get Started
+              </button>
+              
+              <button id="menu" class="hamburger">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="16" viewBox="0 0 20 16" fill="none">
+                      <path d="M10 14.25H18.75M1.25 8H18.75M1.25 1.75H18.75" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+              </button>
+          </div>
+  
+          <ul id="mobile-menu" class="mobile-menu">
+            <li class="dropdown">
+              <button class="dropbtn">Shop 
+                <svg  width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 7.5L10 12.5L15 7.5" stroke="white" stroke-opacity="0.8" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                  
+              </button>
+              <ul class="dropdown-content">
+                  <li><a href="#">Toys</a></li>
+                  <li><a href="#">Food</a></li>
+              </ul>
+          </li>
+          <li class="dropdown">
+              <button class="dropbtn">Services 
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 7.5L10 12.5L15 7.5" stroke="white" stroke-opacity="0.8" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                  
+              </button>
+              <ul class="dropdown-content">
+                  <li><a href="#">Grooming</a></li>
+                  <li><a href="#">Training</a></li>
+              </ul>
+          </li>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Contact</a></li>
+          </ul>
+      </nav>
+  </header>
+  
+<section class="banner section-padding">
+  <div class="banner-content">
     <h1>Pawsitively Perfect:<br />Where Every Pet’s Dream Comes True!</h1>
     <p>
       Welcome to Paws n’ Play, the ultimate destination for pet lovers! Explore
@@ -71,7 +110,7 @@
   </div>
 </section>
 
-<section id="featuredproducts"> 
+<section class="featuredproducts section-padding"> 
   <div class="section-header">
     <div class="section-title">   
       <h2> 
@@ -82,62 +121,322 @@
       </h2>
     </div>
 </div>
+<div class="products-container">
+  <div class="product-header">
    <h3>Featured Products</h3>
-  <div class="tabs">
+   <div class="search-container">
+    <svg class="search-icon" width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M16 14.5H15.21L14.93 14.23C15.9439 13.054 16.5011 11.5527 16.5 10C16.5 8.71442 16.1188 7.45772 15.4046 6.3888C14.6903 5.31988 13.6752 4.48676 12.4874 3.99479C11.2997 3.50282 9.99279 3.37409 8.73192 3.6249C7.47104 3.8757 6.31285 4.49477 5.40381 5.40381C4.49477 6.31285 3.8757 7.47104 3.6249 8.73192C3.37409 9.99279 3.50282 11.2997 3.99479 12.4874C4.48676 13.6752 5.31988 14.6903 6.3888 15.4046C7.45772 16.1188 8.71442 16.5 10 16.5C11.61 16.5 13.09 15.91 14.23 14.93L14.5 15.21V16L19.5 20.99L20.99 19.5L16 14.5ZM10 14.5C7.51 14.5 5.5 12.49 5.5 10C5.5 7.51 7.51 5.5 10 5.5C12.49 5.5 14.5 7.51 14.5 10C14.5 12.49 12.49 14.5 10 14.5Z" fill="#101828" fill-opacity="0.38"/>
+      </svg>
+        <input type="text" class="search-input" placeholder="Search">
+    </div>
+
+  </div>
+   <div class="tabs">
     <button class="tab active">Random</button>
-    <button class="tab">Cat</button>
-    <button class="tab">Dogs</button>
-    <button class="tab">Fish</button>
-    <button class="tab">Birds</button>
+    <button class="tab" data-category="cat">Cat</button>
+    <button class="tab" data-category="dogs">Dogs</button>
+    <button class="tab" data-category="fish">Fish</button>
+    <button class="tab" data-category="birds">Birds</button>
 </div>
 
+
+<div class="products random">
+  <div class="product-image">
+    <img src="./images/multivitamin.png" alt="Multivitamin">
+    <div class="product-overlay">
+      <div class="product-text">
+        <div class="container-flex">
+          <span class="price">₦15,000.00</span>
+          <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M15 6.87497C9.375 1.03247 2.5 5.34372 2.5 11.4225C2.5 17.5 7.525 20.7387 11.2025 23.6387C12.5 24.6612 13.75 25.625 15 25.625" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+            <path opacity="0.5" d="M15 6.87497C20.625 1.03247 27.5 5.34372 27.5 11.4225C27.5 17.5012 22.475 20.74 18.7975 23.64C17.5 24.6612 16.25 25.625 15 25.625" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+            </svg> 
+        </div>
+        <div>
+        <h3>Multivitamin For Cat</h3>
+        <p class="description">Lorem ipsum dolor sit amet consectetur. Vitae donec pellentesque ut eget tempor egestas diam.</p>
+      </div>
+      <div class="quantity-container">
+        <div class="quantity-button">
+          <button class="decrease">-</button>
+          <span class="quantity">1</span>
+          <button class="increase">+</button>
+        </div>
+        <button class="card-btn">Add to card</button>
+      </div>
+      </div>
+    </div>
+  </div>
+  <div class="product-image">
+    <img src="./images/cat_food.png" alt="cat_food">
+    <div class="product-overlay">
+      <div class="product-text">
+        <div class="container-flex">
+          <p>₦15,000.00</p>
+          <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M15 6.87497C9.375 1.03247 2.5 5.34372 2.5 11.4225C2.5 17.5 7.525 20.7387 11.2025 23.6387C12.5 24.6612 13.75 25.625 15 25.625" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+            <path opacity="0.5" d="M15 6.87497C20.625 1.03247 27.5 5.34372 27.5 11.4225C27.5 17.5012 22.475 20.74 18.7975 23.64C17.5 24.6612 16.25 25.625 15 25.625" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+            </svg> 
+        </div>
+        <div>
+          <h3>Multivitamin For Cat</h3>
+          <p class="description">Lorem ipsum dolor sit amet consectetur. Vitae donec pellentesque ut eget tempor egestas diam.</p>
+        </div>
+        <div class="quantity-container">
+          <div class="quantity-button">
+            <button class="decrease">-</button>
+            <span class="quantity">1</span>
+            <button class="increase">+</button>
+          </div>
+          <button class="card-btn">Add to card</button>
+        </div>
+        </div>
+    </div>
+  </div>
+  <div class="product-image">
+    <img src="./images/dog_food.png" alt="dog_food">
+    <div class="product-overlay">
+      <div class="product-text">
+        <div class="container-flex">
+          <p>₦15,000.00</p>
+          <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M15 6.87497C9.375 1.03247 2.5 5.34372 2.5 11.4225C2.5 17.5 7.525 20.7387 11.2025 23.6387C12.5 24.6612 13.75 25.625 15 25.625" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+            <path opacity="0.5" d="M15 6.87497C20.625 1.03247 27.5 5.34372 27.5 11.4225C27.5 17.5012 22.475 20.74 18.7975 23.64C17.5 24.6612 16.25 25.625 15 25.625" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+            </svg> 
+        </div>
+        <div>
+          <h3>Multivitamin For Cat</h3>
+          <p class="description">Lorem ipsum dolor sit amet consectetur. Vitae donec pellentesque ut eget tempor egestas diam.</p>
+        </div>
+        <div class="quantity-container">
+          <div class="quantity-button">
+            <button class="decrease">-</button>
+            <span class="quantity">1</span>
+            <button class="increase">+</button>
+          </div>
+          <button class="card-btn">Add to card</button>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
-  <div class="products"> 
-    <img src="./images/produto.png" alt="produto" > 
-    <img src="./images/produto.png" alt="produto"> 
-  </div> 
+
+
+<div class="products cat">
+  <div class="product-image">
+    <img src="./images/multivitamin.png" alt="Multivitamin">
+    <div class="product-overlay">
+      <div class="product-text">
+        <div class="container-flex top">
+          <p>₦15,000.00</p>
+          <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M15 6.87497C9.375 1.03247 2.5 5.34372 2.5 11.4225C2.5 17.5 7.525 20.7387 11.2025 23.6387C12.5 24.6612 13.75 25.625 15 25.625" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+            <path opacity="0.5" d="M15 6.87497C20.625 1.03247 27.5 5.34372 27.5 11.4225C27.5 17.5012 22.475 20.74 18.7975 23.64C17.5 24.6612 16.25 25.625 15 25.625" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+            </svg> 
+        </div>
+        <div>
+        <h3>Multivitamin For Cat</h3>
+        <p>Lorem ipsum dolor sit amet consectetur. Vitae donec pellentesque ut eget tempor egestas diam.</p>
+      </div>
+      <div class="quantity-container">
+        <div class="quantity-button">
+          <button class="decrease">-</button>
+          <span class="quantity">1</span>
+          <button class="increase">+</button>
+        </div>
+        <button class="card-btn">Add to card</button>
+      </div>
+        </div>
+      </div>
+    </div>
+  <div class="product-image">
+    <img src="./images/cat_food.png" alt="cat_food">
+    <div class="product-overlay">
+      <div class="product-text">
+        <div class="container-flex">
+          <p>₦15,000.00</p>
+          <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M15 6.87497C9.375 1.03247 2.5 5.34372 2.5 11.4225C2.5 17.5 7.525 20.7387 11.2025 23.6387C12.5 24.6612 13.75 25.625 15 25.625" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+            <path opacity="0.5" d="M15 6.87497C20.625 1.03247 27.5 5.34372 27.5 11.4225C27.5 17.5012 22.475 20.74 18.7975 23.64C17.5 24.6612 16.25 25.625 15 25.625" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+            </svg> 
+        </div>
+        <div>
+          <h3>Multivitamin For Cat</h3>
+          <p>Lorem ipsum dolor sit amet consectetur. Vitae donec pellentesque ut eget tempor egestas diam.</p>
+        </div>
+        <div class="quantity-container">
+          <div class="quantity-button">
+            <button class="decrease">-</button>
+            <span class="quantity">1</span>
+            <button class="increase">+</button>
+          </div>
+          <button class="card-btn">Add to card</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="products dogs">
+  <div class="product-image">
+    <img src="./images/pet_plate.png" alt="pet_plate">
+    <div class="product-overlay">
+      <div class="product-text">
+        <div class="container-flex">
+          <p>₦15,000.00</p>
+          <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M15 6.87497C9.375 1.03247 2.5 5.34372 2.5 11.4225C2.5 17.5 7.525 20.7387 11.2025 23.6387C12.5 24.6612 13.75 25.625 15 25.625" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+            <path opacity="0.5" d="M15 6.87497C20.625 1.03247 27.5 5.34372 27.5 11.4225C27.5 17.5012 22.475 20.74 18.7975 23.64C17.5 24.6612 16.25 25.625 15 25.625" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+            </svg> 
+        </div>
+        <div>
+          <h3>Pet Plate</h3>
+          <p>Lorem ipsum dolor sit amet consectetur. Vitae donec pellentesque ut eget tempor egestas diam.</p>
+        </div>
+        <div class="quantity-container">
+          <div class="quantity-button">
+            <button class="decrease">-</button>
+            <span class="quantity">1</span>
+            <button class="increase">+</button>
+          </div>
+          <button class="card-btn">Add to card</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="product-image">
+    <img src="./images/dog_food.png" alt="dog_food">
+    <div class="product-overlay">
+      <div class="product-text">
+        <div class="container-flex">
+          <p>₦15,000.00</p>
+          <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M15 6.87497C9.375 1.03247 2.5 5.34372 2.5 11.4225C2.5 17.5 7.525 20.7387 11.2025 23.6387C12.5 24.6612 13.75 25.625 15 25.625" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+            <path opacity="0.5" d="M15 6.87497C20.625 1.03247 27.5 5.34372 27.5 11.4225C27.5 17.5012 22.475 20.74 18.7975 23.64C17.5 24.6612 16.25 25.625 15 25.625" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+            </svg> 
+        </div>
+        <div>
+          <h3>Dog Food</h3>
+          <p>Lorem ipsum dolor sit amet consectetur. Vitae donec pellentesque ut eget tempor egestas diam.</p>
+        </div>
+        <div class="quantity-container">
+          <div class="quantity-button">
+            <button class="decrease">-</button>
+            <span class="quantity">1</span>
+            <button class="increase">+</button>
+          </div>
+          <button class="card-btn">Add to card</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="product-image">
+    <img src="./images/dog_water.png" alt="dog_water">
+    <div class="product-overlay">
+      <div class="product-text">
+        <div class="container-flex">
+          <p>₦15,000.00</p>
+          <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M15 6.87497C9.375 1.03247 2.5 5.34372 2.5 11.4225C2.5 17.5 7.525 20.7387 11.2025 23.6387C12.5 24.6612 13.75 25.625 15 25.625" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+            <path opacity="0.5" d="M15 6.87497C20.625 1.03247 27.5 5.34372 27.5 11.4225C27.5 17.5012 22.475 20.74 18.7975 23.64C17.5 24.6612 16.25 25.625 15 25.625" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+            </svg> 
+        </div>
+        <div>
+          <h3>Dog Water</h3>
+          <p>Lorem ipsum dolor sit amet consectetur. Vitae donec pellentesque ut eget tempor egestas diam.</p>
+        </div>
+        <div class="quantity-container">
+          <div class="quantity-button">
+            <button class="decrease">-</button>
+            <span class="quantity">1</span>
+            <button class="increase">+</button>
+          </div>
+          <button class="card-btn">Add to card</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="products birds">
+  <div class="product-image">
+    <img src="./images/bird_water.png" alt="bird_water">
+    <div class="product-overlay">
+      <div class="product-text">
+        <div class="container-flex">
+          <p>₦15,000.00</p>
+          <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M15 6.87497C9.375 1.03247 2.5 5.34372 2.5 11.4225C2.5 17.5 7.525 20.7387 11.2025 23.6387C12.5 24.6612 13.75 25.625 15 25.625" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+            <path opacity="0.5" d="M15 6.87497C20.625 1.03247 27.5 5.34372 27.5 11.4225C27.5 17.5012 22.475 20.74 18.7975 23.64C17.5 24.6612 16.25 25.625 15 25.625" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+            </svg> 
+        </div>
+        <div>
+          <h3>Bird Water</h3>
+          <p>Lorem ipsum dolor sit amet consectetur. Vitae donec pellentesque ut eget tempor egestas diam.</p>
+        </div>
+        <div class="quantity-container">
+          <div class="quantity-button">
+            <button class="decrease">-</button>
+            <span class="quantity">1</span>
+            <button class="increase">+</button>
+          </div>
+          <button class="card-btn">Add to card</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  <div class="align-right">
+    <a href="#">View more>>></a>
+  </div>
+</div>
 </section> 
 
-<section id="shop">
+<section class="shop section-padding">
   <div class="section-header">
     <div class="section-title">
       <h2>    
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
           <path d="M5.83584 4.56592C6.33084 4.56592 7.21884 4.71892 7.21884 5.93767C7.21884 7.15642 6.33984 7.62517 5.83584 7.62517C5.33184 7.62517 4.55859 7.14667 4.55859 5.93767C4.55859 4.72792 5.40834 4.56592 5.83584 4.56592ZM3.11709 6.09592C3.61209 6.09592 4.50009 6.24817 4.50009 7.46692C4.50009 8.68567 3.62109 9.15442 3.11709 9.15442C2.61309 9.15442 1.83984 8.67667 1.83984 7.46692C1.83984 6.25792 2.68959 6.09592 3.11709 6.09592ZM10.5001 5.93767C10.5001 4.71892 9.61209 4.56667 9.11709 4.56667C8.68959 4.56667 7.83984 4.72792 7.83984 5.93767C7.83984 7.14667 8.61309 7.62517 9.11709 7.62517C9.62109 7.62517 10.5001 7.15642 10.5001 5.93767ZM11.7773 6.09592C12.2723 6.09592 13.1603 6.24817 13.1603 7.46692C13.1603 8.68567 12.2813 9.15442 11.7773 9.15442C11.2733 9.15442 10.5001 8.67667 10.5001 7.46692C10.5001 6.25792 11.3498 6.09592 11.7773 6.09592ZM11.2381 12.0727C11.2381 9.88117 9.82059 7.98292 7.50009 7.98292C5.17959 7.98292 3.78534 9.83392 3.78534 12.0727C3.78534 13.9357 6.00609 13.9357 7.49484 13.9357H7.50009C9.15234 13.9357 11.2381 13.8772 11.2381 12.0727ZM12.1171 15.1312C12.6121 15.1312 13.5001 15.2834 13.5001 16.5022C13.5001 17.7209 12.6211 18.1897 12.1171 18.1897C11.6131 18.1897 10.8398 17.7112 10.8398 16.5022C10.8398 15.2924 11.6896 15.1312 12.1171 15.1312ZM16.2188 14.9729C16.2188 13.7542 15.3308 13.6019 14.8358 13.6019C14.4083 13.6019 13.5586 13.7632 13.5586 14.9729C13.5586 16.1819 14.3318 16.6604 14.8358 16.6604C15.3398 16.6604 16.2188 16.1917 16.2188 14.9729ZM18.1171 13.6019C18.6121 13.6019 19.5001 13.7542 19.5001 14.9729C19.5001 16.1917 18.6211 16.6604 18.1171 16.6604C17.6131 16.6604 16.8398 16.1819 16.8398 14.9729C16.8398 13.7632 17.6896 13.6019 18.1171 13.6019ZM22.1603 16.5022C22.1603 15.2834 21.2723 15.1312 20.7773 15.1312C20.3498 15.1312 19.5001 15.2924 19.5001 16.5022C19.5001 17.7112 20.2733 18.1897 20.7773 18.1897C21.2813 18.1897 22.1603 17.7209 22.1603 16.5022ZM16.5001 17.0182C18.8206 17.0182 20.2381 18.9157 20.2381 21.1079C20.2381 22.9124 18.1531 22.9709 16.5001 22.9709H16.4941C15.0061 22.9709 12.7853 22.9709 12.7853 21.1079C12.7853 18.8692 14.1803 17.0182 16.5001 17.0182Z" fill="#101828"/>
         </svg>
-        Shop
+        Services
       </h2>
     </div>
   </div>
-  <div class="container">
-    <div class="item">
+  <div class="services-container">
+    <div class="services-item">
         <img src="./images/grooming.png" alt="Grooming">
         <div class="overlay"><p>Grooming</p></div>
     </div>
   
-    <div class="item">
+    <div class="services-item">
         <img src="./images/boarding.png" alt="Boarding">
         <div class="overlay"><p>Boarding</p></div>
     </div>
-  
-    <div class="item">
+    
+    <div class="services-item adoption">
+      <img src="./images/adoption.png" alt="Adoption">
+      <div class="overlay"><p>Adoption</p></div>
+  </div>
+    <div class="services-item ">
         <img src="./images/veterinary.png" alt="Veterinary">
         <div class="overlay"><p>Veterinary</p></div>
     </div>
   
-    <div class="item">
+    <div class="services-item">
         <img src="./images/training.png" alt="Training">
         <div class="overlay"><p>Training</p></div>
     </div>
-  
-    <div class="item adoption">
-        <img src="./images/adoption.png" alt="Adoption">
-        <div class="overlay"><p>Adoption</p></div>
-    </div>
+
   </div>
 </section>
   
-<section id="about">
+<section class="about section-padding">
   <div class="section-header">
     <div class="section-title">    
       <h2>
@@ -148,7 +447,8 @@
       </h2>
     </div>
   </div>
-  <div class="">
+  <div class="about-container">
+  <div class="text">
     <p>
       At Paws n’ Play, our journey began with a simple yet profound love for
       animals. Inspired by the unwavering companionship and joy they bring to
@@ -182,9 +482,13 @@
       Play, where pets are family, and love knows no bounds.
     </p>
   </div>
+  <div class="image">
+    <img src="./images/aboutimage.png" alt="about">
+  </div>
+</div>
 </section>
 
-<section id="blog">
+<section class="blog section-padding" >
   <div class="section-header">
     <div class="section-title">
     <h2>
@@ -195,8 +499,10 @@
     </h2>
     </div>
   </div>
-  <div class="">
-    <h3>Milestone: 20,000 Pets Treated</h3>
+  <div class="blog-container">
+  <div class="text">
+    <h2>Milestone: 20,000 Pets Treated</h2>
+    <hr>
     <p>
       Eget quis mi enim, leo lacinia pharetra, semper. Eget in volutpat mollis
       at volutpat lectus velit, sed auctor. Porttitor fames arcu quis fusce
@@ -208,6 +514,7 @@
       at donec. In turpis vel et quam imperdiet. Ipsum molestie aliquet sodales
       id est ac volutpat.
     </p>
+    <div>
     <h3>Renewed target</h3>
     <p>
       Pharetra morbi libero id aliquam elit massa integer tellus. Quis felis
@@ -215,10 +522,17 @@
       a, elementum eu. Maecenas est morbi mattis id in ac.
     </p>
   </div>
-  <button class="button">Read more</button>
+  <div>
+    <button class="button">Read more</button>
+  </div>
+  </div>
+  <div class="image">
+    <img src="./images/video.png" width="608px" height="649px">
+  </div>
+</div>
 </section>
 
-<section id="team">
+<section class="team section-padding">
   <div class="section-header">
     <div class="section-title">
       <h2>
@@ -378,7 +692,7 @@
 </section>
 
 
-<section id="footer">
+<section class="footer section-padding">
   <div class="contact-info">
   <div class="section-header white">
       <h2>
@@ -388,6 +702,8 @@
         Get in touch
       </h2>
   </div>
+  
+  <div class="contact-container">
   <div class="contacts">
     <article class="item">
       <div class="icon">
@@ -455,50 +771,59 @@
     </article>
   </div>
   <article>
-    <form class="container-form">
+    <form class="container-form" id="contact-form">
+      <div class="error-card" id="error-card">
+      <small class="error-message" id="error-message"></small>
+    </div>
+
       <div class="grid">
         <div>
-        <label>first name</label>
-        <input type="text" name="firstname" value="First name" required>
+          <label>First Name</label>
+          <input type="text" name="firstname" id="firstname" placeholder="First name" required>
+        </div>
+        <div>
+          <label>Last Name</label>
+          <input type="text" name="lastname" id="lastname" placeholder="Last name" required>
+        </div>
       </div>
-    <div>
-        <label>Last name</label>
-        <input type="text" name="lastname" value="Last name" required>
-    </div>
-  </div>
-  <div>
-      <label>Email</label>
-      <input type="email" name="email" value="you@company.com" required>
-    </div>
-  <div>
-      <label id="message">Message</label>
-      <textarea name="message" required></textarea>
-     
-    </div>
+      <div>
+        <label>Email</label>
+        <input type="email" name="email" id="email" placeholder="you@company.com" required>
+      </div>
+      <div>
+        <label>Message</label>
+        <textarea name="message" id="message" required></textarea>
+      </div>
       <label class="checkbox-container">
-        <input type="checkbox" name="termos" value="aceito" required>
+        <input type="checkbox" id="termos" name="termos" value="aceito" required>
         <p>You agree to our friendly <a href="#">privacy policy</a>.</p>
       </label>
       
       <button type="submit">Send Message</button>
     </form>
+  
   </article>
 </div>
-  <article class="newsletter border-top">
-    <div>   
-        <h2>  
-          Join our newsletter
-        </h2>
-      <p>Be the first to receive latest updates on promo, sales and offers</p>
-    </div>
-    <form>
-        <input value="Enter your email" type="text" required>
-        <button type="submit">Subscribe</button>
-    </form>
+<article class="newsletter border-top">
+  <div>   
+      <h2>Join our newsletter</h2>
+      <p>Be the first to receive the latest updates on promo, sales, and offers</p>
   </div>
- </article>
-  <article class="newsletter">   
-    <div>
+  <form id="newsletter-form" class="container-flex">
+    
+      <div class="input">
+        <small class="error-message" id="error-newsletter"></small>
+          <input placeholder="Enter your email" type="email" id="email-newsletter" required>
+      </div>
+      <div>
+          <button type="submit">Subscribe</button>
+      </div>
+  </form>
+</article>
+
+ <div class="container-category">
+  <article class="category-header">   
+    <div class="newsletter-text">
       <h2>  
         <svg width="29" height="26" viewBox="0 0 29 26" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M6.28113 0.847168C6.94112 0.847168 8.12512 1.05117 8.12512 2.67617C8.12512 4.30117 6.95312 4.92617 6.28113 4.92617C5.60913 4.92617 4.57812 4.28817 4.57812 2.67617C4.57812 1.06317 5.71112 0.847168 6.28113 0.847168ZM2.65613 2.88717C3.31613 2.88717 4.50012 3.09017 4.50012 4.71517C4.50012 6.34017 3.32812 6.96517 2.65613 6.96517C1.98413 6.96517 0.953125 6.32817 0.953125 4.71517C0.953125 3.10317 2.08613 2.88717 2.65613 2.88717ZM12.5001 2.67617C12.5001 1.05117 11.3161 0.848168 10.6561 0.848168C10.0861 0.848168 8.95312 1.06317 8.95312 2.67617C8.95312 4.28817 9.98413 4.92617 10.6561 4.92617C11.3281 4.92617 12.5001 4.30117 12.5001 2.67617ZM14.2031 2.88717C14.8631 2.88717 16.0471 3.09017 16.0471 4.71517C16.0471 6.34017 14.8751 6.96517 14.2031 6.96517C13.5311 6.96517 12.5001 6.32817 12.5001 4.71517C12.5001 3.10317 13.6331 2.88717 14.2031 2.88717ZM13.4841 10.8562C13.4841 7.93417 11.5941 5.40317 8.50012 5.40317C5.40613 5.40317 3.54712 7.87117 3.54712 10.8562C3.54712 13.3402 6.50812 13.3402 8.49312 13.3402H8.50012C10.7031 13.3402 13.4841 13.2622 13.4841 10.8562ZM14.6561 14.9342C15.3161 14.9342 16.5001 15.1372 16.5001 16.7622C16.5001 18.3872 15.3281 19.0122 14.6561 19.0122C13.9841 19.0122 12.9531 18.3742 12.9531 16.7622C12.9531 15.1492 14.0861 14.9342 14.6561 14.9342ZM20.1251 14.7232C20.1251 13.0982 18.9411 12.8952 18.2811 12.8952C17.7111 12.8952 16.5781 13.1102 16.5781 14.7232C16.5781 16.3352 17.6091 16.9732 18.2811 16.9732C18.9531 16.9732 20.1251 16.3482 20.1251 14.7232ZM22.6561 12.8952C23.3161 12.8952 24.5001 13.0982 24.5001 14.7232C24.5001 16.3482 23.3281 16.9732 22.6561 16.9732C21.9841 16.9732 20.9531 16.3352 20.9531 14.7232C20.9531 13.1102 22.0861 12.8952 22.6561 12.8952ZM28.0471 16.7622C28.0471 15.1372 26.8631 14.9342 26.2031 14.9342C25.6331 14.9342 24.5001 15.1492 24.5001 16.7622C24.5001 18.3742 25.5311 19.0122 26.2031 19.0122C26.8751 19.0122 28.0471 18.3872 28.0471 16.7622ZM20.5001 17.4502C23.5941 17.4502 25.4841 19.9802 25.4841 22.9032C25.4841 25.3092 22.7041 25.3872 20.5001 25.3872H20.4921C18.5081 25.3872 15.5471 25.3872 15.5471 22.9032C15.5471 19.9182 17.4071 17.4502 20.5001 17.4502Z" fill="white"/>
@@ -613,7 +938,9 @@
   </article>
  
 </div>
-<article class="allrights border-top  ">
+</div>
+</div>
+<article class="allrights border-top">
   <p>© 2024 Paws n’ Play. All rights reserved.</p>
   <div class="icons">
     <a href="#">
@@ -673,19 +1000,10 @@
               <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path fill-rule="evenodd" clip-rule="evenodd" d="M12.5 0.387207C5.87527 0.387207 0.5 5.76248 0.5 12.3872C0.5 19.012 5.87527 24.3872 12.5 24.3872C19.1117 24.3872 24.5 19.012 24.5 12.3872C24.5 5.76248 19.1117 0.387207 12.5 0.387207ZM20.4262 5.91866C21.8579 7.66269 22.717 9.88828 22.743 12.2961C22.4046 12.2311 19.0206 11.5412 15.6106 11.9707C15.5325 11.8015 15.4675 11.6193 15.3894 11.4371C15.1811 10.9426 14.9469 10.435 14.7126 9.95338C18.4869 8.41761 20.205 6.20499 20.4262 5.91866ZM12.5 2.15727C15.103 2.15727 17.4848 3.13341 19.2939 4.73428C19.1117 4.99458 17.5629 7.064 13.9186 8.43058C12.2397 5.34599 10.3786 2.82105 10.0922 2.43059C10.8601 2.24838 11.6671 2.15727 12.5 2.15727ZM8.13995 3.12039C8.41325 3.48482 10.2354 6.02278 11.9404 9.04228C7.15076 10.3178 2.92083 10.2918 2.46529 10.2918C3.12907 7.11606 5.27657 4.47397 8.13995 3.12039ZM2.24404 12.4003C2.24404 12.2961 2.24404 12.192 2.24404 12.0879C2.68655 12.1009 7.65835 12.166 12.7733 10.6302C13.0727 11.2028 13.346 11.7885 13.6063 12.3742C13.4761 12.4132 13.3329 12.4523 13.2028 12.4913C7.91865 14.1963 5.10738 18.8557 4.8731 19.2462C3.2462 17.4371 2.24404 15.0293 2.24404 12.4003ZM12.5 22.6432C10.1312 22.6432 7.94469 21.8362 6.21367 20.4826C6.39588 20.1052 8.47827 16.0966 14.257 14.0792C14.283 14.0662 14.2961 14.0662 14.3221 14.0532C15.7668 17.7885 16.3525 20.9251 16.5087 21.8232C15.2722 22.3568 13.9186 22.6432 12.5 22.6432ZM18.2136 20.8861C18.1096 20.2614 17.5629 17.2679 16.2223 13.5846C19.4371 13.077 22.2484 13.91 22.5998 14.0272C22.1573 16.8775 20.5173 19.3373 18.2136 20.8861Z" fill="#CECECE"/>
                 </svg>
-              </a>
-                              
-  </div>
-</article>
+              </a>                  
+        </div>
+    </article>
 </section>
 
 </body>
 </html>
-<script>
-  const menuBtn = document.getElementById('menu');
-  const mobileMenu = document.getElementById('mobile-menu');
-
-  menuBtn.addEventListener('click', () => {
-      mobileMenu.classList.toggle('active');
-  });
-</script>
