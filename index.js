@@ -72,69 +72,86 @@
     
     //Validacão do formulário
     document.getElementById("contact-form").addEventListener("submit", function (event) {
-        const errorElement = document.getElementById("error-message-contact");
-        const errorCard = document.getElementById("error-card-contact");
-        errorElement.textContent = "";    
-        errorElement.classList.remove("show");
-        
-        errorCard.style.display="none";
-
+        const messageElement = document.getElementById("message-contact");
+        const messageCard = document.getElementById("card-contact");
+    
+        messageElement.textContent = "";
+        messageElement.classList.remove("show", "error", "success");
+        messageCard.style.display = "none";
+    
         const firstname = document.getElementById("firstname");
         const lastname = document.getElementById("lastname");
         const email = document.getElementById("email");
         const messageField = document.getElementById("message");
         const termos = document.getElementById("termos");
-  
-        function error(message){
-          errorElement.textContent=message;   
-          errorElement.classList.add("show");
-        
-          errorCard.style.display = "block";
-          event.preventDefault();
-          return;
+    
+        function message(message, isError = true) {
+            messageElement.textContent = message;
+            messageElement.classList.add("show");
+    
+            messageCard.style.display = "block";
+            messageCard.classList.remove("error", "success");
+            messageCard.classList.add(isError ? "error" : "success");
+    
+            event.preventDefault();
         }
-        if (firstname.value.trim() === ""){
-          error("Insira o seu primeiro nome");
+    
+        if (firstname.value.trim() === "") {
+            message("Insira o seu primeiro nome");
+            return;
         }
-        if (lastname.value.trim() === ""){
-          error("Insira o seu último nome");
-  
+        if (lastname.value.trim() === "") {
+            message("Insira o seu último nome");
+            return;
         }
-        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)){ 
-          error("Por favor, insira um email válido");
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)) {
+            message("Por favor, insira um email válido");
+            return;
         }
-        if (messageField.value.trim() === ""){ 
-          error("Por favor, insira uma mensagem");
+        if (messageField.value.trim() === "") {
+            message("Por favor, insira uma mensagem");
+            return;
         }
-        if (!termos.checked){ 
-          error("Aceite nossa politica de privacidade");
+        if (!termos.checked) {
+            message("Aceite nossa política de privacidade");
+            return;
         }
-  
-      });
+    
+        message("Mensagem enviada com sucesso!", false);
+    });
+    
 
     //   Validação do email newsletter 
     document.getElementById("newsletter-form").addEventListener("submit", function (event) {
-        const errorCard = document.getElementById("error-card-newsletter");
-        const errorElement = document.getElementById("error-message-newsletter");
-        errorCard.style.display="none";
-        errorElement.textContent = ""; 
-        errorElement.classList.remove("show");
-        
+        const messageCardNewsletter = document.getElementById("card-newsletter");
+        const messageElementNewsletter = document.getElementById("message-newsletter");
+    
+        messageElementNewsletter.textContent = "";
+        messageElementNewsletter.classList.remove("show", "error", "success");
+        messageCardNewsletter.style.display = "none";
+    
         const email = document.getElementById("email-newsletter");
-  
-        function error(message){
-          errorElement.textContent=message;
-          errorElement.classList.add("show");
-          errorCard.style.display = "block";
-          event.preventDefault();
-          return;
+    
+        function messageNewsletter(text, isError = true) {
+            messageElementNewsletter.textContent = text;
+            messageElementNewsletter.classList.add("show");
+    
+            messageCardNewsletter.style.display = "block";
+            messageCardNewsletter.classList.remove("error", "success");
+            messageCardNewsletter.classList.add(isError ? "error" : "success");
+    
+                event.preventDefault();
+    
         }
-   
-        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)){ 
-          error("Por favor, insira um email válido");
+    
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)) {
+            messageNewsletter("Por favor, insira um email válido");
+            return;
         }
-      });
-
+    
+        messageNewsletter("E-mail registrado com sucesso!", false);
+       
+    });
     // dropdown do menu
   document.addEventListener("DOMContentLoaded", function () {
   const menuButton = document.getElementById("menu");
