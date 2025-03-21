@@ -9,10 +9,7 @@
     document.addEventListener("DOMContentLoaded", () => {
         const tabs = document.querySelectorAll(".tab");
         const productSections = document.querySelectorAll(".products");
-        let allProducts = [];
-        productSections.forEach(section => {
-            allProducts = allProducts.concat(Array.from(section.children));
-        });
+
         tabs.forEach(tab => {
             tab.addEventListener("click", () => {
                 tabs.forEach(t => t.classList.remove("active"));
@@ -21,14 +18,12 @@
                 const category = tab.dataset.category || "random";
             
                 productSections.forEach(section => {
-                    section.style.display = "none";
+                    section.classList.remove("products-active");
                 });
     
                 const actual_container = document.querySelector(`.products.${category}`);
                 if (actual_container) {
-                    actual_container.style.display = "grid";
-                    actual_container.style.gridTemplateColumns = "repeat(3, 1fr)";
-                    actual_container.style.gap = "15px";
+                    actual_container.classList.add("products-active");
                 }
                 if (category === "random") {
                     randomProducts(actual_container);
@@ -36,33 +31,45 @@
             });
         });
       //Embaralha os produtos
+      const container = document.querySelector(".products.random");
+      const viewMore = document.getElementById("view-more");
+      let status = false; 
+  
       function randomProducts(container) {
-        const shuffledProducts = [...allProducts]; 
-        for (let i = shuffledProducts.length - 1; i > 0; i--) {
-            const j = Math.floor(Math.random() * (i + 1));
-            [shuffledProducts[i], shuffledProducts[j]] = [shuffledProducts[j], shuffledProducts[i]];
-        }
-
-        container.innerHTML = "";
-        shuffledProducts.forEach(product => container.appendChild(product));
-    }
-});
-document.addEventListener("DOMContentLoaded", () => {
-  const products = document.querySelectorAll(".products.random .product-image");
-  const viewMore = document.getElementById("view-more");
-
-  function showAllProducts() {
-      products.forEach(product => {
-          product.style.display = "block";
-          viewMore.style.display="none";
+          const allProducts = Array.from(container.children);
+          const shuffledProducts = [...allProducts];
+  
+          for (let i = shuffledProducts.length - 1; i > 0; i--) {
+              const j = Math.floor(Math.random() * (i + 1));
+              [shuffledProducts[i], shuffledProducts[j]] = [shuffledProducts[j], shuffledProducts[i]];
+          }
+  
+          container.innerHTML = "";
+          shuffledProducts.forEach(product => container.appendChild(product));
+  
+      }
+  
+      function alterProductsQuantity() {
+          const products = container.querySelectorAll(".product-image");
+          products.forEach((product, index) => {
+              if (status || index < 3) {
+                  product.style.display = "block"; 
+              } else {
+                  product.style.display = "none";
+              }
+          });
+  
+          viewMore.textContent = status ? "View less >>>" : "View more >>>";
+      }
+  
+      viewMore.addEventListener("click", () => {
+          status = !status; 
+          alterProductsQuantity();
       });
-  }
-  viewMore.addEventListener("click", () => {
-      showAllProducts(); 
+  
+      randomProducts(container);
   });
-});
-
-
+    
     //Validacão do formulário
     document.getElementById("contact-form").addEventListener("submit", function (event) {
         const errorElement = document.getElementById("error-message-contact");
